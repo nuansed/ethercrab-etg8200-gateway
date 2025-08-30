@@ -97,10 +97,10 @@ Firewall
 sudo ufw allow 34980/udp
 ```
 
-Operational Gotchas
+Notes
 
-CRITICAL: Do NOT access CoE data and TwinSAFE Loader in parallel. Commands may collide and be aborted (Beckhoff docs, chapter 9).
-- Do NOT run other mailbox traffic (CoE/SDO, FoE, etc.) during TwinSAFE operations - causes timeouts
+- Do not access CoE data and TwinSAFE Loader in parallel. Commands may collide and be aborted (https://download.beckhoff.com/download/document/automation/twinsafe/twinsafe_loader_en.pdf P.38)
+- Do not run other mailbox traffic (CoE/SDO, FoE, etc.) during TwinSAFE operations - causes timeouts
 - Slaves must be in SAFE-OP or OP state for TwinSAFE tools to work
 - Single gateway instance only - multiple gateways on same bus will interfere
 - TwinSAFE tools expect reachable slaves - gateway just provides UDP transport on port 34980
