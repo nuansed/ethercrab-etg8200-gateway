@@ -1,0 +1,24 @@
+[workspace]
+
+[package]
+name = "ethercrab-etg8200-gateway"
+version = "0.1.0"
+edition = "2021"
+authors = ["EtherCrab contributors"]
+description = "EtherCAT Mailbox Gateway (ETG.8200) for EtherCrab"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/nuansed/ethercrab-etg8200-gateway"
+keywords = ["ethercat", "gateway", "etg8200", "twinsafe", "industrial"]
+categories = ["network-programming", "embedded"]
+
+[[bin]]
+name = "ethercrab-mbg"
+path = "src/main.rs"
+
+[dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "time", "io-util", "signal", "sync"] }
+ethercrab = { git = "https://github.com/nuansed/ethercrab", branch = "mailbox-passthrough", features = ["std"] }
+log = "0.4"
+env_logger = "0.11"
+anyhow = "1.0"
+
